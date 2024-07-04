@@ -89,7 +89,7 @@ const userConfig: HardhatUserConfig = {
         compilers: [{ version: primarySolidityVersion, settings: soliditySettings }, { version: defaultSolidityVersion }],
     },
     zksolc: {
-        version: "1.4.0",
+        version: "1.5.1",
     },
     networks: {
         hardhat: {

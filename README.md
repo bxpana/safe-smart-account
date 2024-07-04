@@ -1,3 +1,11 @@
+updated to 1.5.1 version of zksolc in hardhat.config
+zksafetest.ts is reproducible example from them
+zktest.ts contains suggested fix https://github.com/zkSync-Community-Hub/zksync-developers/discussions/482#discussioncomment-9808530
+
+to run tests use= HARDHAT_RUN_ZKSYNC_NODE=1 npx hardhat test test/zktest.ts
+
+
+
 Safe Smart Account
 ==============
 
@@ -42,7 +50,7 @@ MNEMONIC=
 
 A collection of the different Safe contract deployments and their addresses can be found in the [Safe deployments](https://github.com/safe-global/safe-deployments) repository.
 
-To add support for a new network follow the steps of the ``Deploy`` section and create a PR in the [Safe deployments](https://github.com/safe-global/safe-deployments) repository. 
+To add support for a new network follow the steps of the ``Deploy`` section and create a PR in the [Safe deployments](https://github.com/safe-global/safe-deployments) repository.
 
 ### Deploy
 
@@ -74,7 +82,7 @@ npx hardhat --network <network> local-verify
 
 It is possible to use the `NODE_URL` env var to connect to any EVM based network via an RPC endpoint. This connection then can be used with the `custom` network.
 
-E.g. to deploy the Safe contract suite on that network you would run `npm run deploy-all custom`. 
+E.g. to deploy the Safe contract suite on that network you would run `npm run deploy-all custom`.
 
 The resulting addresses should be on all networks the same.
 
@@ -82,9 +90,9 @@ Note: Address will vary if contract code is changed or a different Solidity vers
 
 #### Replay protection (EIP-155)
 
-Some networks require replay protection, making it incompatible with the default deployment process as it relies on a presigned transaction without replay protection (see https://github.com/Arachnid/deterministic-deployment-proxy). 
+Some networks require replay protection, making it incompatible with the default deployment process as it relies on a presigned transaction without replay protection (see https://github.com/Arachnid/deterministic-deployment-proxy).
 
-Safe Smart Account contracts use a different deterministic deployment proxy (https://github.com/safe-global/safe-singleton-factory). To make sure that the latest version of this package is installed, make sure to run `npm i --save-dev @gnosis.pm/safe-singleton-factory` before deployment. For more information, including how to deploy the factory to a new network, please refer to the factory repo.  
+Safe Smart Account contracts use a different deterministic deployment proxy (https://github.com/safe-global/safe-singleton-factory). To make sure that the latest version of this package is installed, make sure to run `npm i --save-dev @gnosis.pm/safe-singleton-factory` before deployment. For more information, including how to deploy the factory to a new network, please refer to the factory repo.
 
 Note: This will result in different addresses compared to hardhat's default deterministic deployment process.
 
